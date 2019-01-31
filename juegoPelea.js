@@ -1,3 +1,6 @@
+// Este algoritmo se hizo para probar funciones flecha.
+
+
 let vidaAlejito= 120;
 let vidaRodas= 100;
 let golpeAlejitoMin= 8;
