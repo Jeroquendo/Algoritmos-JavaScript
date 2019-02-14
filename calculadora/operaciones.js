@@ -32,20 +32,25 @@ document.getElementById("miBtn").addEventListener("click",function empezar(){
       case 1:
          let opSuma = prompt("ingrese la suma", "1+1")
          let numSuma = opSuma.split("+")
-         let resulSuma = suma(Number(numSuma[0]), Number(numSuma[1]))
-         alert("El resultado de la suma es: " + resulSuma)
+         let resultadoSuma=0
+         for (let i = 0; i < numSuma.length; i++) {
+            resultadoSuma = resultadoSuma+Number(numSuma[i])
+          }
+         alert("El resultado de la suma es: " + resultadoSuma)
          break;
       case 2:
          let opResta = prompt("ingrese la resta"," 1 - 1")
-         let numResta = opResta.split("-")
-         let resulRes = resta(Number(numResta[0]), Number(numResta[1]))
-         alert("El resultado de la resta es: " + Math.round(resulRes))
+         let numResta = opResta.split("-").join(" -").split(" ").map(x=>Number(x)).reduce((total,acu)=>total=total+acu)
+         alert("El resultado de la resta es: " + numResta)
          break;
       case 3:
          let opMult = prompt("ingrese la multiplicacion"," 1x1")
          let numMult = opMult.split("x")
-         let resulMult = multiplicar(Number(numMult[0]), Number(numMult[1]))
-         alert("El resultado de la multiplicacion es: " + resulMult)
+         let resultadoMult=1
+         for (let i = 0; i < numMult.length; i++) {
+            resultadoMult = resultadoMult*Number(numMult[i])
+          }
+         alert("El resultado de la multiplicacion es: " + resultadoMult)
          break;
       case 4:
          let opDivision= prompt("ingrese la division"," 1/1")
@@ -70,6 +75,24 @@ document.getElementById("miBtn").addEventListener("click",function empezar(){
          let numRaiz = opRaiz.split("")
          let resulRaiz = raiz(Number(numRaiz[0]), Number(numRaiz[1]))
          alert("El resultado de la multiplicacion es: " +  resulRaiz.toFixed(2))
+         break;
+
+      case 8:
+         let opSeno = prompt("ingrese numero al cual le quiere sacar seno: ", "1")
+         let resulSeno = Math.sin(Number(opSeno))
+         alert("El resultado de seno " + opSeno + " es: " + resulSeno.toFixed(2))
+         break;
+      
+      case 9:
+         let opCoseno = prompt("ingrese numero al cual le quiere sacar coseno: ", "1")
+         let resulCoseno = Math.cos(Number(opCoseno))
+         alert("El resultado de Coseno " + opCoseno + " es: " + resulCoseno.toFixed(2))
+         break;
+      
+      case 10:
+         let opTangente = prompt("ingrese numero al cual le quiere sacar Tangente: ", "1")
+         let resulTangente = Math.tan(Number(opTangente))
+         alert("El resultado de Tangente " + opTangente + " es: " + resulTangente.toFixed(2))
          break;
       
       default:
