@@ -1,11 +1,13 @@
 "use strict"
 let numeros = [3,2,4,2,42,23,10];
 let numbers = new Array(10);
-let numbers2 = new Array(20,45,34,23,12,43,21,43);
+let numbers2 = new Array(20,45,34,23,12,43,21,43,1,5);
 let numbers3 = new Array();
  
 
  function ordenamientoAscedente(array){
+     array.map((x) => { return Number(x) })
+     console.log(typeof(array[1]));
      console.log(array.sort());
      let array2= new Array();
     for(let i=0;i<numbers2.length;i++){

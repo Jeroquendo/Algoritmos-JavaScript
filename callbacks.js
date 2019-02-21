@@ -1,41 +1,23 @@
 "use strict"
 
-let promedio = (...numeros) => {
-    return numeros.reduce((resultado, sumador) => { 
-        return resultado+= sumador
-        
-    })/numeros.length
-} 
-
-let primos = (...numeros) => { 
-    return numeros.filter((x) =>{
-        if (x%2==0 && x!=2) { 
-        return false
-        }else if (x%3==0 && x!=3) {
-            return false
-        }else if (x%5==0 && x!=5) {
-            return false
-        }else if (x%7==0 && x!=7) {
-            return false
-        }else {
-            return true
-        }
-    })
-} 
-
-let gramos = (...numeros) => {
-    return numeros.map((x) => { 
-        return x = x / 1000
-   })
+function ejemplo(arreglo, callback) { 
+    if (arreglo.length > 0 && arreglo instanceof Array) {
+        let resultado = arreglo.map((x) => { return Math.sqrt(x) })
+        return callback(null, resultado)
+    } else { 
+        let error = new Error("No se pudo cuchito")
+        return callback(error, null)
+    }
 }
 
-let kilogramos = (...numeros) => {
-    return numeros.map((x) => { 
-        return x = x * 1000
-   })
-}
+/*let callback = (error, resultado) => {
+    if (error != null) {
+        console.log(resultado);
+    } else { console.log(error);
+    }
+} */
 
-console.log(promedio(4, 7, 2, 5));
-console.log(primos(4, 7, 11, 5));
-console.log(gramos(3,5,7,2));
-console.log(kilogramos(3,5,7,2))
+
+ejemplo([3,4,6,49,68], (error, resultado) => {
+    (error) ? console.error(error) : console.log(resultado)
+})
