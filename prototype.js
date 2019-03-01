@@ -16,5 +16,4 @@ let perros = () => {
     var perro2 = new animal(4, Dante, 5, buenaRaza)
 
     
-    }
-
+}
